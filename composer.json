@@ -1,0 +1,52 @@
+{
+    "name": "brew/zapi",
+    "description": "Laravel package for Z-API WhatsApp integration",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Douglas Maia",
+            "email": "douglas@brew.com.vc"
+        }
+    ],
+    "require": {
+        "php": "^8.2",
+        "illuminate/support": "^11.0",
+        "illuminate/database": "^11.0",
+        "illuminate/http": "^11.0",
+        "guzzlehttp/guzzle": "^7.8"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^9.0",
+        "pestphp/pest": "^3.0",
+        "pestphp/pest-plugin-laravel": "^3.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Brew\\Zapi\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Brew\\Zapi\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Brew\\Zapi\\Providers\\ZapiServiceProvider"
+            ],
+            "aliases": {
+                "Zapi": "Brew\\Zapi\\Facades\\Zapi"
+            }
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    }
+}
